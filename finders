@@ -20,3 +20,4 @@ alias fl=$' | xargs less'
 # u use $r for the regex expression
 # then u follow the directories and see the stuff,
 # then u it like this 'pi fl' to see the stuff with less
+#### ------ pi fl does not work ------
