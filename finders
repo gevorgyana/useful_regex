@@ -15,7 +15,7 @@ alias ggi=$'grep -Ilri "$r" .'
 alias gx=$'grep -EIlr "$r" .'
 alias gxi=$'grep -EIlri "$r" .'
 ## this is for quick review
-alias fl=$'| xargs less'
+alias fl=$' | xargs less'
 # use this like this - first u find stuff with greps
 # u use $r for the regex expression
 # then u follow the directories and see the stuff,
