@@ -14,6 +14,7 @@ alias ggi=$'grep -Ilri "$r" .'
 # x for extended, e is taken by some other program
 alias gx=$'grep -EIlr "$r" .'
 alias gxi=$'grep -EIlri "$r" .'
+## this is for quick review
 alias fl=$'| xargs less'
 # use this like this - first u find stuff with greps
 # u use $r for the regex expression
