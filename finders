@@ -1,0 +1,18 @@
+# filter stuff - designed to be used with find
+alias n=$' awk -F "/" \' {print $2 } \' | sort | uniq -c'
+
+## the following things are meant to work recursively (-r flag)
+## always ignore binary files, need only the filenames
+# this should work r="int[ \n]*main"
+# or this too (?s)int.*main
+alias pi=$'grep -Plozr "$r" .'
+alias pii=$'grep -Plozri "$r" .'
+alias gg=$'grep -Ilr "$r" .'
+alias ggi=$'grep -Ilri "$r" .'
+alias gx=$'grep -EIlr "$r" .'
+alias gxi=$'grep -EIlri "$r" .'
+alias fl=$'| xargs less'
+# use this like this - first u find stuff with greps
+# u use $r for the regex expression
+# then u follow the directories and see the stuff,
+# then u it like this 'pi fl' to see the stuff with less
