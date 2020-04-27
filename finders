@@ -1,6 +1,5 @@
 # filter stuff - designed to be used with find
 alias n=$' awk -F "/" \' {print $2 } \' | sort | uniq -c'
-
 ## the following things are meant to work recursively (-r flag)
 ## always ignore binary files, need only the filenames
 # this should work r="int[ \n]*main"
@@ -13,8 +12,11 @@ alias gx=$'grep -EIlr "$r" .'
 alias gxi=$'grep -EIlri "$r" .'
 alias fl=$'| xargs less'
 # use this like this - first u find stuff with greps
-# u use $r for the regex expression
-# then u follow the directories and see the stuff,
-# then u do it like this 'pi fl' to see the stuff with less
+# [  gg | n  ]
+# use $r for the regex expression
+# then follow the directories and see the stuff,
+# then do it like this
+# [  gg fl  ]
+# to see the stuff with less
 # less has :f, :n, :p, -i flag, / for forward search, ? for 
 # backward search - everything that may be needed
