@@ -9,7 +9,6 @@ alias n=$' awk -F "/" \' {print $2 } \' | sort | uniq -c'
 # in a context where the regex tool will see the file as a
 # string (regardless of the lines; it will one single line
 # that ends with EOF symbol).
-#
 # this should work
 # [  r="int[ \n]*main"  ]
 # or this too
