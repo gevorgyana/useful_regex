@@ -30,9 +30,8 @@ function chregb()
    regb="$1"
 }
 
-# TODO find bettter names
-alias abcdefg=' $regb | n '
-alias gfedcba=' $regb | xargs less '
+alias gref=' $regb | n '
+alias grel=' $regb | xargs less '
 
 # local results
-alias lres=$' abcdefg | awk \' {print $2} \' | grep \'.*\..*\' | xargs less '
+alias lres=$' gref | awk \' {print $2} \' | grep \'.*\..*\' | xargs less '
