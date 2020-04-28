@@ -12,7 +12,8 @@ alias n=$' awk -F "/" \' {print $2 } \' | sort | uniq -c'
 #
 # this should work
 # [  r="int[ \n]*main"  ]
-# or this too (?s)int.*main (perl regex)
+# or this too
+# [  (?s)int.*main (perl regex)  ]
 alias pg=$'grep -Plozr "$r" .'
 alias pgi=$'grep -Plozri "$r" .'
 
