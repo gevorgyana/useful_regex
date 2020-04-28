@@ -16,6 +16,9 @@ alias ggi=$'grep -Ilri "$r" .'
 alias gx=$'grep -EIlr "$r" .'
 alias gxi=$'grep -EIlri "$r" .'
 
+### the following are driver commands, probably
+### you want to use them in first place
+
 # control regex expression
 alias e='echo $r'
 chre ()
@@ -23,7 +26,7 @@ chre ()
     r="$1"
 }
 
-# change the regex backend
+# change regex backend
 chreb()
 {
    regb="$1"
