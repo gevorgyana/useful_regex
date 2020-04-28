@@ -34,8 +34,10 @@ chreb()
 
 # grep-find 
 alias gref=' $regb | n '
+
 # grep-find-less 
 alias grefl=' $regb | xargs less '
+
 # grep-find-less-local 
 #   (relies on the fact that most filenames that contain
 #   source code are files with non-empty extension)
