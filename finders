@@ -24,14 +24,17 @@ chre ()
     r="$1"
 }
 
-# control the regex backend
-function chregb()
+# change the regex backend
+chreb()
 {
    regb="$1"
 }
 
+# grep-find 
 alias gref=' $regb | n '
-alias grel=' $regb | xargs less '
-
-# local results
-alias lres=$' gref | awk \' {print $2} \' | grep \'.*\..*\' | xargs less '
+# grep-find-less 
+alias grefl=' $regb | xargs less '
+# grep-find-less-local 
+#   (relies on the fact that most filenames that contain
+#   source code are files with non-empty extension)
+alias grefll=$' gref | awk \' {print $2} \' | grep \'.*\..*\' | xargs less '
