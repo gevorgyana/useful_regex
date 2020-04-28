@@ -1,3 +1,11 @@
+## big todo - support caching!!!
+## it may be useful - it is very useful
+## anyway everyone uses git restore/reset to get
+## back to the committed state and indexes meaningful 
+## changes (but still it is possible to watch the  state of
+## the files in the subdirectories first (if it has not changed,
+## fallback to cache)
+
 # filter stuff - designed to be used with find
 alias n=$' awk -F "/" \' {print $2 } \' | sort | uniq -c'
 
