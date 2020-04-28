@@ -1,5 +1,5 @@
 ## big todo - support caching!!!
-## it may be useful - it is very useful
+## it is very useful
 ## anyway everyone uses git restore/reset to get
 ## back to the committed state and indexes meaningful 
 ## changes (but still it is possible to watch the  state of
