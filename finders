@@ -1,31 +1,38 @@
+
 # filter stuff - designed to be used with find
 alias n=$' awk -F "/" \' {print $2 } \' | sort | uniq -c'
 
 ## the following things are meant to work recursively (-r flag)
 ## always ignore binary files, need only the filenames
 # this should work r="int[ \n]*main"
-# or this too (?s)int.*main
-# perl grep
+# or this too (?s)int.*main (perl regex)
 alias pg=$'grep -Plozr "$r" .'
 alias pgi=$'grep -Plozri "$r" .'
+
 # general grep
 alias gg=$'grep -Ilr "$r" .'
 alias ggi=$'grep -Ilri "$r" .'
+
 # x for extended, e is taken by some other program
 alias gx=$'grep -EIlr "$r" .'
 alias gxi=$'grep -EIlri "$r" .'
-## this is for quick review
-alias fl=$' | xargs less'
-# use this like this - first u find stuff with greps
-# u use $r for the regex expression, follow the 
-# directories and see the stuff,
-# then u it like this 'pi fl' to see the stuff with less
-#### ------ pi fl does not work ------
-#### aliases do not take parameters, have to use function
-#### like this chre "main", or chre main, or chre "int[ \n]*main"
-#### ( need quotes the expression will be expanded otherwise
+
+# control regex expression
+alias e='echo $r'
 chre ()
 {
     r="$1"
 }
-### todo
+
+# control the regex backend
+function chregb()
+{
+   regb="$1"
+}
+
+# TODO find bettter names
+alias todofindagoodname=' $regb | n '
+alias godknowswhat=' $regb | xargs less '
+
+# local results
+alias lres=$' fo | awk \' {print $2} \' | grep \'.*\..*\' | xargs less '
