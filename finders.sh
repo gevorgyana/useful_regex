@@ -40,11 +40,13 @@ chreb()
    regb="$1"
 }
 
+## using eval is nasty, but what can I do? todo fix this
+
 # grep-find 
-alias gref=' $regb | n '
+alias gref=' eval $regb | n '
 
 # grep-find-less 
-alias grefl=' $regb | xargs less '
+alias grefl=' eval $regb | xargs less '
 
 # grep-find-less-local 
 #   (relies on the fact that most filenames that contain
