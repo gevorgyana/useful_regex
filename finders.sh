@@ -10,7 +10,7 @@
 ## and then trying to find the defintion of it automatically
 ## like this:
 ## IN:         ClassName
-## PROCESSED:  "class[ \n]*ClassName[\n ]*\{" 
+## PROCESSED:  "class[ \n]*ClassName[\n ]*\{" OR MAYBE THIS "class ClassName[^;]
 ##  // of course there could be comments in between, so better use clang tools for this type of work
 ##  // solution is either intergrati with clang ( a lot of work ) or just do it like this for now
 ##  // or think of specifying comments here; but still in theory anything could happen because of the
