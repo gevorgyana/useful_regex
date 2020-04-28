@@ -17,7 +17,15 @@ alias gxi=$'grep -EIlri "$r" .'
 ## this is for quick review
 alias fl=$' | xargs less'
 # use this like this - first u find stuff with greps
-# u use $r for the regex expression
-# then u follow the directories and see the stuff,
+# u use $r for the regex expression, follow the 
+# directories and see the stuff,
 # then u it like this 'pi fl' to see the stuff with less
 #### ------ pi fl does not work ------
+#### aliases do not take parameters, have to use function
+#### like this chre "main", or chre main, or chre "int[ \n]*main"
+#### ( need quotes the expression will be expanded otherwise
+chre ()
+{
+    r="$1"
+}
+### todo
