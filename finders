@@ -1,9 +1,17 @@
 # filter stuff - designed to be used with find
 alias n=$' awk -F "/" \' {print $2 } \' | sort | uniq -c'
 
-## the following things are meant to work recursively (-r flag)
-## always ignore binary files, need only the filenames
-# this should work r="int[ \n]*main"
+# The following things are meant to work recursively (-r flag)
+# always ignore binary files (-I), need only the filenames (-l)
+
+# perl regex can do more than plain regex, for example,
+# we can use the following regex expressions
+# in a context where the regex tool will see the file as a
+# string (regardless of the lines; it will one single line
+# that ends with EOF symbol).
+#
+# this should work
+# [  r="int[ \n]*main"  ]
 # or this too (?s)int.*main (perl regex)
 alias pg=$'grep -Plozr "$r" .'
 alias pgi=$'grep -Plozri "$r" .'
@@ -16,8 +24,8 @@ alias ggi=$'grep -Ilri "$r" .'
 alias gx=$'grep -EIlr "$r" .'
 alias gxi=$'grep -EIlri "$r" .'
 
-### the following are driver commands, probably
-### you want to use them in first place
+## the following are driver commands, probably
+## you want to use them in first place
 
 # control regex expression
 alias e='echo $r'
