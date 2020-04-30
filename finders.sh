@@ -81,6 +81,27 @@ alias grefll=$' gref | awk \' {print $2} \' | grep \'.*\..*\' | xargs less '
 
 # Todo store the state of regex backend too as sometimes it may be important
 
+# This version of push differs from the original one in that it saves 'first second'
+# as one item in the stack, whereas the original version would see it as two words
+# delimited by a space;
+stack_push ()
+{
+    : ${1?'Missing stack name'};
+    : ${2?'Missing item to push'};
+    if no_such_stack $1; then
+        echo "No such stack -- $1" 1>&2;
+        return 1;
+    fi;
+    stack="$1";
+    shift 1;
+    eval '_i=$'"_stack_${stack}_i";
+    eval "_stack_${stack}[$_i]='$@'";
+    eval "let _stack_${stack}_i+=1";
+    unset _i;
+    return 0
+}
+
+
 function gapply ()
 {
     stack_pop patterns r
