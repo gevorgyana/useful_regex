@@ -72,3 +72,21 @@ alias grefl=' eval $regb | xargs less '
 #   (relies on the fact that most filenames that contain
 #   source code are files with non-empty extension)
 alias grefll=$' gref | awk \' {print $2} \' | grep \'.*\..*\' | xargs less '
+
+# Using this stack implementation in Bash https://gist.github.com/bmc/1323553
+
+# Todo make these drivers more useful - push should automatically create a stack
+# if it is not already there; right now u need to create it manually for every Bash 
+# session
+
+# Todo store the state of regex backend too as sometimes it may be important
+
+function gapply ()
+{
+    stack_pop patterns r
+}
+
+function gstash ()
+{
+    stack_push patterns $1
+}
