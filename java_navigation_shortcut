@@ -1,0 +1,27 @@
+
+# --- Github-like single path in filesystem detection
+# Useful for Java projects
+
+# Find the number of directories in the parent directory and go
+# there if there is only one.
+function gup() {
+    num_dir=$(ls .. | sort | uniq -c | awk '{print $1}')
+    while [ "$num_dir" == '1' ]
+    do
+	echo 'up'
+	cd ..
+	num_dir=$(ls .. | sort | uniq -c | awk '{print $1}')
+    done
+}
+
+# Find the number of directories in the current directory and go
+# there if there is only one.
+function gdo() {
+    num_dir=$(ls . | sort | uniq -c | awk '{print $1}')
+    while [ "$num_dir" == '1' ]
+    do
+	echo 'down'
+	cd *
+	num_dir=$(ls . | sort | uniq -c | awk '{print $1}')
+    done
+}
